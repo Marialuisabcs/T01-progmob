@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="55dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/edtBuscaCurso"
+            android:layout_width="253dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/icSearchCurso" />
+
+        <!--android:onClick= inserir o método de busca!-->
+        <ImageView
+            android:id="@+id/icSearchCurso"
+            android:layout_width="61dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_search"
+            tools:ignore="VectorDrawableCompat" />
+
+        <!--Vai precisar de um list view pra mostrar o curso que o usuário procurou -->
+    </LinearLayout>
+
+    <!-- android:onClick= chamar método que leva ele pra área de inserção-->
+    <Button
+        android:id="@+id/btEditarCurso"
+        android:layout_width="121dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="207dp"
+        android:text="@string/tab_text_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
