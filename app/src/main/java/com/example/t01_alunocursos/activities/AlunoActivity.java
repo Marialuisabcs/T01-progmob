@@ -1,6 +1,8 @@
 package com.example.t01_alunocursos;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -10,8 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.t01_alunocursos.ui.main.SectionsPagerAdapterA;
 
 public class Alunos extends AppCompatActivity {
-
-    //TESTANDO
+    EditText edtNomeAluno, edtCurso, edtEmail, edtTel, edtCpf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,13 @@ public class Alunos extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapterA);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+
+        edtNomeAluno = findViewById(R.id.edtNomeAluno);
+        edtCurso = findViewById(R.id.edtCurso);
+        edtEmail = findViewById(R.id.edtEmail);
+        edtTel = findViewById(R.id.edtTel);
+        edtCpf = findViewById(R.id.edtCpf);
+
 
 
     }
