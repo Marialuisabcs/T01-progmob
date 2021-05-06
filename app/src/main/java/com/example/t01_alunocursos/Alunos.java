@@ -11,6 +11,8 @@ import com.example.t01_alunocursos.ui.main.SectionsPagerAdapterA;
 
 public class Alunos extends AppCompatActivity {
 
+    //TESTANDO
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
