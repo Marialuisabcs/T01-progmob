@@ -16,7 +16,6 @@ import com.example.t01_alunocursos.R;
 
 public class Fragment1A extends Fragment{
     View rootView;
-    //EditText edtNomeAluno, edtCurso, edtEmail, edtTel, edtCpf;
 
     @Nullable
     @Override

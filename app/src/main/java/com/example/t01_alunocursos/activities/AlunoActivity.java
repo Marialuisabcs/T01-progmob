@@ -11,6 +11,7 @@ import com.example.t01_alunocursos.entities.Aluno;
 import com.example.t01_alunocursos.utils.AppDatabase;
 import com.google.android.material.tabs.TabLayout;
 
+import androidx.room.Room;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +20,7 @@ import com.example.t01_alunocursos.daos.AlunoDao;
 
 public class AlunoActivity extends AppCompatActivity {
     EditText edtNomeAluno, edtCurso, edtEmail, edtTel, edtCpf;
+    AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,8 @@ public class AlunoActivity extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapterA);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
+
+        db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "DB-ALUNO_CURSO").build();
 
         edtNomeAluno = findViewById(R.id.edtNomeAluno);
         edtCurso = findViewById(R.id.edtCurso);
