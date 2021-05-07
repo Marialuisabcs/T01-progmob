@@ -56,7 +56,7 @@ public class AlunoActivity extends AppCompatActivity {
 
         Aluno novoAluno = new Aluno(nome, email, cpf, tel);
 
-        AppDatabase.getConnection(getApplicationContext()).alunoDao().insertAll(novoAluno);
+        db.getConnection(getApplicationContext()).alunoDao().insertAll(novoAluno);
 
     }
 
