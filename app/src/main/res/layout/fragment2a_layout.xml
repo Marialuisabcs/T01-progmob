@@ -36,6 +36,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
+            android:onClick="buscaAluno"
             app:srcCompat="@drawable/ic_search"
             tools:ignore="VectorDrawableCompat" />
 
@@ -51,7 +52,20 @@
         android:layout_marginRight="43dp"
         android:layout_marginBottom="207dp"
         android:text="@string/tab_text_2"
+        android:onClick="editarAluno"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- android:onClick= chamar método que excluir o aluno do banco-->
+    <Button
+        android:id="@+id/btExcluirAluno"
+        android:layout_width="121dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginBottom="207dp"
+        android:text="@string/btExcluir"
+        android:onClick="excluirAluno"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

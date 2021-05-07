@@ -29,17 +29,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5eb6765b-72c6-48fa-80a6-e0a00c02e4be" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/daos/AlunoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/daos/CursoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/entities/Aluno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/entities/Curso.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/utils/AppDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/T01-AlunoCursos.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/T01-AlunoCursos.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/Alunos.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/Alunos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/Alunos.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/activities/AlunoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/Consulta.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/activities/ConsultaActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/Cursos.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/activities/CursosActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/Fragment1A.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/fragments/Fragment1A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/Fragment1C.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/fragments/Fragment1C.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/Fragment2A.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/fragments/Fragment2A.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/Fragment2C.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/fragments/Fragment2C.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/TelaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/activities/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/ui/main/SectionsPagerAdapterA.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/ui/main/SectionsPagerAdapterA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/ui/main/SectionsPagerAdapterC.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/t01_alunocursos/ui/main/SectionsPagerAdapterC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_alunos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_alunos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_consulta.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_consulta.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_cursos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_cursos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment1a_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment1a_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment2a_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment2a_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment2c_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment2c_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/tela_inicial.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_activity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -50,6 +88,7 @@
       <list>
         <option value="layoutResourceFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -168,10 +207,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="637" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620275869571">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1620327876289">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="637" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1620275869571" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1620327876289" />
+    <state x="637" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620323852276">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="637" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1620323852276" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1620269042832">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -184,21 +227,5 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="859" y="308" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1620273177543" />
-    <state width="1876" height="-27" key="GridCell.Tab.0.bottom" timestamp="1620271163888">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1876" height="-27" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1620271163888" />
-    <state width="1876" height="-27" key="GridCell.Tab.0.center" timestamp="1620271163888">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1876" height="-27" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1620271163888" />
-    <state width="1876" height="-27" key="GridCell.Tab.0.left" timestamp="1620271163888">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1876" height="-27" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1620271163888" />
-    <state width="1876" height="-27" key="GridCell.Tab.0.right" timestamp="1620271163888">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1876" height="-27" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1620271163888" />
   </component>
 </project>

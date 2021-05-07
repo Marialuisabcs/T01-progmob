@@ -1,4 +1,4 @@
-package com.example.t01_alunocursos;
+package com.example.t01_alunocursos.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,15 +7,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+import com.example.t01_alunocursos.R;
 
 
-public class TelaInicial extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tela_inicial);
+        setContentView(R.layout.main_activity);
 
         this.setTitle("Seja bem-vindo(a)");
 
@@ -24,12 +24,17 @@ public class TelaInicial extends AppCompatActivity {
 
 
     public void abrirAluno(View view) {
-        Intent it = new Intent(TelaInicial.this, Alunos.class);
+        Intent it = new Intent(MainActivity.this, AlunoActivity.class);
         startActivity(it);
     }
 
     public void abrirCurso(View view) {
-        Intent it = new Intent(TelaInicial.this, Cursos.class);
+        Intent it = new Intent(MainActivity.this, CursosActivity.class);
+        startActivity(it);
+    }
+
+    public void abrirConsulta(View view) {
+        Intent it = new Intent(MainActivity.this, ConsultaActivity.class);
         startActivity(it);
     }
 }

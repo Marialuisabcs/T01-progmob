@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.t01_alunocursos.Fragment1A;
-import com.example.t01_alunocursos.Fragment2A;
+import com.example.t01_alunocursos.fragments.Fragment1A;
+import com.example.t01_alunocursos.fragments.Fragment2A;
 import com.example.t01_alunocursos.R;
 
 /**

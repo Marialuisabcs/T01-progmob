@@ -1,10 +1,12 @@
-package com.example.t01_alunocursos;
+package com.example.t01_alunocursos.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Consulta extends AppCompatActivity {
+import com.example.t01_alunocursos.R;
+
+public class ConsultaActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -16,4 +16,6 @@
     <string name="icSearchAluno">Digite o nome do aluno</string>
     <string name="icSearchCurso">Digite o nome do curso</string>
     <string name="title_activity_cursos">Cursos</string>
+    <string name="btExcluir">Excluir</string>
+    <string name="txtCurso">Curso:</string>
 </resources>

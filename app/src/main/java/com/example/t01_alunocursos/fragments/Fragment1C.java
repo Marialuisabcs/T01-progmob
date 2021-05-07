@@ -1,4 +1,4 @@
-package com.example.t01_alunocursos;
+package com.example.t01_alunocursos.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.t01_alunocursos.R;
+//FRAGMENTO DE INSERÇÃO DE CURSOS
 public class Fragment1C extends Fragment{
     View rootView;
 
