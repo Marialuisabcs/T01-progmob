@@ -56,12 +56,6 @@ public class AlunoActivity extends AppCompatActivity {
 
     }
 
-    public void buscaaluno(View view){
-        String nomeAluno;
-        nomeAluno = edtCurso.getText().toString();
-        Aluno aluno = AppDatabase.getConnection(getApplicationContext()).alunoDao().findByName(nomeAluno);
-        //adcionar a visualização da busca
-    }
 
     public void editarAluno(View view){
 

@@ -8,64 +8,20 @@
     android:gravity="center"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="55dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/edtBuscaAluno"
-            android:layout_width="253dp"
-            android:layout_height="56dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="20dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/icSearchAluno" />
-
-        <!--android:onClick= inserir o método de busca!-->
-        <ImageView
-            android:id="@+id/icSearchAluno"
-            android:layout_width="61dp"
-            android:layout_height="36dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:layout_weight="1"
-            android:onClick="buscaAluno"
-            app:srcCompat="@drawable/ic_search"
-            tools:ignore="VectorDrawableCompat" />
-
-        <!--Vai precisar de um list view pra mostrar o aluno que o usuário procurou -->
-    </LinearLayout>
-
-    <!-- android:onClick= chamar método que leva ele pra área de inserção-->
-    <Button
-        android:id="@+id/btEditarAluno"
-        android:layout_width="121dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="43dp"
-        android:layout_marginRight="43dp"
-        android:layout_marginBottom="207dp"
-        android:text="@string/tab_text_2"
-        android:onClick="editarAluno"
+    <ListView
+        android:layout_width="412dp"
+        android:layout_height="608dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- android:onClick= chamar método que excluir o aluno do banco-->
-    <Button
-        android:id="@+id/btExcluirAluno"
-        android:layout_width="121dp"
-        android:layout_height="0dp"
-        android:layout_marginLeft="43dp"
-        android:layout_marginBottom="207dp"
-        android:text="@string/btExcluir"
-        android:onClick="excluirAluno"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginTop="70dp"
+        android:text="Aqui vai o list view com todos os alunos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

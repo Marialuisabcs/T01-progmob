@@ -45,12 +45,6 @@ public class CursosActivity extends AppCompatActivity {
 
     }
 
-    public void buscaCurso(View view){
-        String nomeCurso;
-        nomeCurso = edtNome.getText().toString();
-        Curso curso = AppDatabase.getConnection(getApplicationContext()).cursoDao().findByName(nomeCurso);
-        //adcionar a visualização da busca
-    }
 
     public void editarCurso(View view){
 
