@@ -37,24 +37,25 @@ public class InsrtAluActivity extends AppCompatActivity {
         edtTel = findViewById(R.id.edtTel);
         edtCpf = findViewById(R.id.edtCpf);
         spinnerCursos = findViewById(R.id.spinnerCursos);
-        //idCursoSelect = getIntent().getIntExtra('curso_selecionado_key')
+
+        //idCursoSelect = getIntent().getIntExtra('curso_selecionado_key') //extra que mostra se é um update ou um insert
     }
 
     @Override
-    public void onResume() {
+    public void onResume() {//mudar visibilidade do botao de exclusão quando for só update (alunoKey != -1)
         super.onResume();
         //selecionarCursos();
 
     }
 
-    public void selecionarCursos(){
+    public void selecionarCursos(){//Terminar de implementar o spinner
         List<Curso> cursos = db.cursoDao().getAll();
         ArrayAdapter adpt = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cursos);
         spinnerCursos.setAdapter(adpt);
         //adiconal seleção
     }
 
-    public void insereAluno(View view) {
+    public void insereAluno(View view) {//terminar de implementar insereAluno!! falta o update que requer um extra da chamada
         String nome, email, tel, cpf, nomeCurso="";
         List<Curso> cursos = db.cursoDao().getAll();
 
@@ -80,6 +81,6 @@ public class InsrtAluActivity extends AppCompatActivity {
     }
 
 
-
-
+    public void excluiAluno(View view) {//implementar a exclusão
+    }
 }

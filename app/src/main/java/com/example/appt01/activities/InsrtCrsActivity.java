@@ -59,7 +59,7 @@ public class InsrtCrsActivity extends AppCompatActivity {
             return;
         }
 
-        else{
+        else{//exlcuir os cursos vazio q deram errado e testar se esta inserindo curso com nome e carga vazia
             if(cursoKey == -1) {
                 Curso novoCurso = new Curso(nome, qtdHrs);
                 db.cursoDao().insertAll(novoCurso);
@@ -79,5 +79,6 @@ public class InsrtCrsActivity extends AppCompatActivity {
 
 
     public void excluiCurso(View view) {
+        //implementar exclusão
     }
 }

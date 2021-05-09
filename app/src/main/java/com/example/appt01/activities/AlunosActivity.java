@@ -40,7 +40,7 @@ public class AlunosActivity extends AppCompatActivity {
         mostrarAlunos();
     }
 
-    public void mostrarAlunos(){
+    public void mostrarAlunos(){//Teminar a implementação do list view dos alunos
         alunos = db.alunoDao().getAll();
         adpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, alunos);
         lvAlunos.setAdapter(adpt);
@@ -52,8 +52,5 @@ public class AlunosActivity extends AppCompatActivity {
         startActivity(it);
     }
 
-    public void editarAluno(View view){
-
-    }
 
 }
