@@ -14,7 +14,7 @@ public class Aluno {
     @ColumnInfo(name = "alunoId")
     private int alunoId;
 
-    @ColumnInfo(name = "nome")
+    @ColumnInfo(name = "nome_aluno")
     private String name;
 
     @ColumnInfo(name = "email")

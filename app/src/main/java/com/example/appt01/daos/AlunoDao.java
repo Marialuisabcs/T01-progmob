@@ -17,10 +17,13 @@ public interface AlunoDao   {
     List<Aluno> getAll();
 
     @Query("SELECT * FROM alunos WHERE alunoId IN (:alunoId) LIMIT 1")
-    Aluno loadAllById(int alunoId);
+    Aluno findById(int alunoId);
 
-    @Query("SELECT * FROM alunos WHERE nome LIKE :nome")
+    @Query("SELECT * FROM alunos WHERE nome_aluno LIKE :nome")
     Aluno findByName(String nome);
+
+    @Query("UPDATE alunos SET nome_aluno=:nome, email=:email, telefone=:tel, cpf=:cpf WHERE alunoId = :id")
+    void update(String nome, String email, String tel, String cpf, int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(Aluno... aluno);
@@ -28,6 +31,4 @@ public interface AlunoDao   {
     @Delete
     void delete(Aluno aluno);
 
-    @Update
-    void update(Aluno aluno);
 }

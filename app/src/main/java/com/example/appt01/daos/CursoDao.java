@@ -11,7 +11,7 @@ import com.example.appt01.entities.Curso;
 
 import java.util.List;
 
-@Dao
+@Dao()
 public interface CursoDao {
     @Query("SELECT * FROM cursos")
     List<Curso> getAll();
@@ -22,12 +22,12 @@ public interface CursoDao {
     @Query("SELECT * FROM cursos WHERE nome_curso LIKE :nome LIMIT 1")
     Curso findByName(String nome);
 
+    @Query("UPDATE cursos SET nome_curso=:nome, carga_horaria=:qtdHrs WHERE cursoId = :id")
+    void update(String nome, int qtdHrs, int id);
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(Curso... cursos);
 
     @Delete
     void delete(Curso curso);
-
-    @Update
-    void update(Curso curso);
 }

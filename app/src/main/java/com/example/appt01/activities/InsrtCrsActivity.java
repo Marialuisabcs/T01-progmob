@@ -16,8 +16,10 @@ import com.example.appt01.utils.AppDatabase;
 
 public class InsrtCrsActivity extends AppCompatActivity {
     private EditText edtNome, edtQtdHrs;
-    Button btExcluir;
-    int cursoKey;
+    private Button btExcluir;
+    private String nome_curso_key;
+    private int cursoKey, qtd_hrs_key;
+    Intent it;
     AppDatabase db ;
 
 
@@ -33,18 +35,32 @@ public class InsrtCrsActivity extends AppCompatActivity {
         edtQtdHrs = findViewById(R.id.edtQtdHrs);
         btExcluir = findViewById(R.id.btExcluirCurso);
 
-        Intent it = getIntent();
+        it = getIntent();
         cursoKey = it.getIntExtra("curso_key", -1);
+
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        //Toast toast = Toast.makeText(this, "CURSO_KEY: "+cursoKey, Toast.LENGTH_LONG);
+        //toast.show();
         if(cursoKey == -1){
             btExcluir.setVisibility(View.GONE);
         }
+        else{
+            cursoSelecionado();
+        }
     }
+
+    public void cursoSelecionado(){
+        nome_curso_key = it.getStringExtra("nome_curso_key");
+        qtd_hrs_key = it.getIntExtra("qtd_hrs_key", 0);
+        edtNome.setText(nome_curso_key);
+        edtQtdHrs.setText(Integer.toString(qtd_hrs_key));
+    }
+
 
     public void insereCurso(View view) {
         String nome;
@@ -53,13 +69,14 @@ public class InsrtCrsActivity extends AppCompatActivity {
         nome = edtNome.getText().toString();
         qtdHrs = Integer.parseInt(edtQtdHrs.getText().toString());
 
+
         if((nome.equals("") || qtdHrs == 0)){
             Toast toast = Toast.makeText(this, "É necessário preencher todos os campos", Toast.LENGTH_LONG);
             toast.show();
             return;
         }
 
-        else{//exlcuir os cursos vazio q deram errado e testar se esta inserindo curso com nome e carga vazia
+        else{
             if(cursoKey == -1) {
                 Curso novoCurso = new Curso(nome, qtdHrs);
                 db.cursoDao().insertAll(novoCurso);
@@ -68,7 +85,7 @@ public class InsrtCrsActivity extends AppCompatActivity {
             }
             else{
                 Curso novoCurso = new Curso(nome, qtdHrs);
-                db.cursoDao().update(novoCurso);
+                db.cursoDao().update(novoCurso.getNome(), novoCurso.getQtdHrs(), cursoKey);
                 Toast toast = Toast.makeText(this, "Curso atualizado com sucesso", Toast.LENGTH_SHORT);
                 toast.show();
             }
@@ -79,6 +96,10 @@ public class InsrtCrsActivity extends AppCompatActivity {
 
 
     public void excluiCurso(View view) {
-        //implementar exclusão
+        Curso curso = db.cursoDao().findById(cursoKey);
+        db.cursoDao().delete(curso);
+        Toast toast = Toast.makeText(this, "Curso excluído com sucesso", Toast.LENGTH_SHORT);
+        toast.show();
+        finish();
     }
 }

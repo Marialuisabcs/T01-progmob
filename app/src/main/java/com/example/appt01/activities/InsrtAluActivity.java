@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -21,9 +22,12 @@ import com.example.appt01.utils.AppDatabase;
 import java.util.List;
 
 public class InsrtAluActivity extends AppCompatActivity {
-    EditText edtNomeAluno, edtEmail, edtTel, edtCpf;
+    private EditText edtNomeAluno, edtEmail, edtTel, edtCpf;
+    private Button btExcluir;
+    private int alunoKey, cursoId_key;
+    private String nome_key, email_key, tel_key, cpf_key;
+    Intent it;
     Spinner spinnerCursos;
-    int idCursoSelect;
     AppDatabase db;
 
     @Override
@@ -32,27 +36,48 @@ public class InsrtAluActivity extends AppCompatActivity {
         setContentView(R.layout.activity_insrt_alu);
         this.setTitle("Edição de Alunos");
 
+        db = AppDatabase.getConnection(getApplicationContext());
+
         edtNomeAluno = findViewById(R.id.edtNomeAluno);
         edtEmail = findViewById(R.id.edtEmail);
         edtTel = findViewById(R.id.edtTel);
         edtCpf = findViewById(R.id.edtCpf);
         spinnerCursos = findViewById(R.id.spinnerCursos);
+        btExcluir = findViewById(R.id.btExcluirAluno);
 
-        //idCursoSelect = getIntent().getIntExtra('curso_selecionado_key') //extra que mostra se é um update ou um insert
+        it = getIntent();
+        alunoKey = it.getIntExtra("aluno_key", -1);
+
     }
 
     @Override
-    public void onResume() {//mudar visibilidade do botao de exclusão quando for só update (alunoKey != -1)
+    public void onResume() {
         super.onResume();
-        //selecionarCursos();
-
+        selecaoCursos();
+        if(alunoKey == -1){
+            btExcluir.setVisibility(View.GONE);
+        }
+        else{
+            alunoSelecionado();
+        }
     }
 
-    public void selecionarCursos(){//Terminar de implementar o spinner
+    public void alunoSelecionado(){
+        nome_key = it.getStringExtra("nome_key");
+        edtNomeAluno.setText(nome_key);
+        email_key = it.getStringExtra("email_key");
+        edtEmail.setText(email_key);
+        tel_key = it.getStringExtra("tel_key");
+        edtTel.setText(tel_key);
+        cpf_key = it.getStringExtra("cpf_key");
+        edtCpf.setText(cpf_key);
+        cursoId_key = it.getIntExtra("cursoId_key", 0);
+    }
+
+    public void selecaoCursos(){//Terminar de implementar o spinner
         List<Curso> cursos = db.cursoDao().getAll();
         ArrayAdapter adpt = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cursos);
         spinnerCursos.setAdapter(adpt);
-        //adiconal seleção
     }
 
     public void insereAluno(View view) {//terminar de implementar insereAluno!! falta o update que requer um extra da chamada
@@ -72,11 +97,18 @@ public class InsrtAluActivity extends AppCompatActivity {
             Toast.makeText(this, "É necessário preencher todos os campos", Toast.LENGTH_LONG);
             return;
         }
-
-        Aluno novoAluno = new Aluno(nome, email, tel, cpf, 0, db.cursoDao().findById(0));
-        novoAluno.setCursoId(cursos.get(spinnerCursos.getSelectedItemPosition()).getCursoId());
-        db.alunoDao().insertAll(novoAluno);
-        Toast.makeText(this, "Aluno cadastrado com sucesso", Toast.LENGTH_SHORT);
+        else {
+            if(alunoKey == -1) {//do spinner ver como pegar o curso MUDAR O CURSO ID O CURSO QUE ESTÃO NA CHAMADA DO NOVO ALUNO
+                Aluno novoAluno = new Aluno(nome, email, tel, cpf, 0, db.cursoDao().findById(0));
+                novoAluno.setCursoId(cursos.get(spinnerCursos.getSelectedItemPosition()).getCursoId());
+                db.alunoDao().insertAll(novoAluno);
+                Toast.makeText(this, "Aluno cadastrado com sucesso", Toast.LENGTH_SHORT);
+            }
+            else{
+                db.alunoDao().update(nome, email, tel, cpf, alunoKey);
+                Toast.makeText(this, "Aluno atualizado com sucesso", Toast.LENGTH_SHORT);
+            }
+        }
 
     }
 

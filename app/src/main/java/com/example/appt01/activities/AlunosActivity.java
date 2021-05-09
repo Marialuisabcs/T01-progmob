@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,6 +24,7 @@ public class AlunosActivity extends AppCompatActivity {
     ListView lvAlunos;
     List<Aluno> alunos;
     ArrayAdapter adpt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,10 +43,25 @@ public class AlunosActivity extends AppCompatActivity {
     }
 
     public void mostrarAlunos(){//Teminar a implementação do list view dos alunos
+        Intent it = new Intent(this, InsrtCrsActivity.class);
+
         alunos = db.alunoDao().getAll();
         adpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, alunos);
         lvAlunos.setAdapter(adpt);
-        //ação quando selecionar algum do list view
+
+        lvAlunos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> a, View v, int pos, long id) {
+                Aluno aluno = alunos.get(pos);
+                it.putExtra("aluno_key", aluno.getAlunoId());
+                it.putExtra("nome_key", aluno.getName());
+                it.putExtra("email_key", aluno.getEmail());
+                it.putExtra("tel_key", aluno.getTel());
+                it.putExtra("cpf_key", aluno.getCpf());
+                it.putExtra("cursoId_key", aluno.getCursoId());
+                startActivity(it);
+            }
+        });
     }
 
     public void abrirInsrtAlu(View view){

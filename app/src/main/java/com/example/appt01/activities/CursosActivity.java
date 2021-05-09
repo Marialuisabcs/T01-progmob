@@ -53,6 +53,8 @@ public class CursosActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> a, View v, int pos, long id) {
                 Curso curso = cursos.get(pos);
                 it.putExtra("curso_key", curso.getCursoId());
+                it.putExtra("nome_curso_key", curso.getNome());
+                it.putExtra("qtd_hrs_key", curso.getQtdHrs());
                 startActivity(it);
             }
         });
