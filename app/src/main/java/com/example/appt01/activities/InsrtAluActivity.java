@@ -81,7 +81,7 @@ public class InsrtAluActivity extends AppCompatActivity {
     }
 
     public void insereAluno(View view) {//terminar de implementar insereAluno!! falta o update que requer um extra da chamada
-        String nome, email, tel, cpf, nomeCurso="";
+        String nome, email, tel, cpf, nomeCurso = " ";
         List<Curso> cursos = db.cursoDao().getAll();
 
         nome = edtNomeAluno.getText().toString();
@@ -93,13 +93,14 @@ public class InsrtAluActivity extends AppCompatActivity {
             nomeCurso = spinnerCursos.getSelectedItem().toString();
         }
 
-        if(nome.equals("") || email.equals("") || tel.equals("") || cpf.equals("") || nomeCurso.equals("")){
+        if(nome.equals("") || email.equals("") || tel.equals("") || cpf.equals("") || nomeCurso.equals(" ")){
             Toast.makeText(this, "É necessário preencher todos os campos", Toast.LENGTH_LONG);
             return;
         }
         else {
             if(alunoKey == -1) {//do spinner ver como pegar o curso MUDAR O CURSO ID O CURSO QUE ESTÃO NA CHAMADA DO NOVO ALUNO
-                Aluno novoAluno = new Aluno(nome, email, tel, cpf, 0, db.cursoDao().findById(0));
+                Curso curso = db.cursoDao().findByName(nomeCurso);
+                Aluno novoAluno = new Aluno(nome, email, tel, cpf, curso.getCursoId(), curso);
                 novoAluno.setCursoId(cursos.get(spinnerCursos.getSelectedItemPosition()).getCursoId());
                 db.alunoDao().insertAll(novoAluno);
                 Toast.makeText(this, "Aluno cadastrado com sucesso", Toast.LENGTH_SHORT);
