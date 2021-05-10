@@ -63,6 +63,16 @@
             android:layout_marginBottom="10dp" />
 
         <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="+ Adicionar novo curso"
+            android:textColor="@color/ufms_azul"
+            android:textSize="18dp"
+            android:onClick="abreAddNovoCurso"/>
+
+        <TextView
             android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -131,25 +141,32 @@
         android:id="@+id/btInserirAluno"
         android:layout_width="149dp"
         android:layout_height="47dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
         android:layout_marginBottom="140dp"
         android:onClick="insereAluno"
         android:text="@string/btSalvar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <Button
         android:id="@+id/btExcluirAluno"
         android:layout_width="149dp"
         android:layout_height="47dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginLeft="18dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginRight="33dp"
         android:layout_marginBottom="140dp"
         android:onClick="excluiAluno"
         android:text="@string/btExcluir"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btInserirAluno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -89,13 +89,13 @@ public class InsrtAluActivity extends AppCompatActivity {
         return 0;
     }
 
-    public void selecaoCursos(){//Terminar de implementar o spinner
+    public void selecaoCursos(){
         List<Curso> cursos = db.cursoDao().getAll();
         adpt = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cursos);
         spinnerCursos.setAdapter(adpt);
     }
 
-    public void insereAluno(View view) {//terminar de implementar insereAluno!! falta o update que requer um extra da chamada
+    public void insereAluno(View view) {
         String nome, email, tel, cpf;
         Curso cursoSelecionado = null;
 
@@ -165,4 +165,8 @@ public class InsrtAluActivity extends AppCompatActivity {
 
     }
 
+    public void abreAddNovoCurso(View view) {
+        Intent it = new Intent(InsrtAluActivity.this, InsrtCrsActivity.class);
+        startActivity(it);
+    }
 }

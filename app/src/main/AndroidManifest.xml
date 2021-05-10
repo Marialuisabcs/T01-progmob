@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppT01">
+        <activity android:name=".activities.ResultBuscaActivity"></activity>
         <activity android:name=".activities.InsrtCrsActivity" />
         <activity android:name=".activities.InsrtAluActivity" />
         <activity android:name=".activities.ConsultaActivity" />

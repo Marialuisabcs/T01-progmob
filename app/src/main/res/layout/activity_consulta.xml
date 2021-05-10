@@ -6,10 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".activities.ConsultaActivity">
 
+    <ListView
+        android:id="@+id/listViewConsulta"
+        android:layout_width="382dp"
+        android:layout_height="536dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+        app:layout_constraintVertical_bias="0.0" />
+
     <LinearLayout
-        android:layout_width="411dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="55dp"
+        android:id="@+id/linearLayout5"
+        android:layout_width="412dp"
+        android:layout_height="91dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,32 +38,23 @@
             android:id="@+id/edtConsulta"
             android:layout_width="253dp"
             android:layout_height="56dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_gravity="center"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="@string/icSearchCurso" />
+            android:hint="@string/icSearchCurso"
+            android:inputType="textPersonName" />
 
-        <!--android:onClick= inserir o método de busca!-->
         <ImageView
-            android:id="@+id/icSearchCurso"
-            android:layout_width="61dp"
-            android:layout_height="36dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
+            android:id="@+id/icBusca"
+            android:layout_width="128dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_search"
-            tools:ignore="VectorDrawableCompat" />
-        <!--Vai precisar de um list view pra mostrar o curso que o usuário procurou -->
-    </LinearLayout>
+            android:onClick="busca"
+            app:srcCompat="@drawable/ic_search" />
 
-    <ListView
-        android:id="@+id/listViewConsulta"
-        android:layout_width="412dp"
-        android:layout_height="574dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

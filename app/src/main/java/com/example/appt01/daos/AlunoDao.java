@@ -22,6 +22,9 @@ public interface AlunoDao   {
     @Query("SELECT * FROM alunos WHERE nome_aluno LIKE :nome")
     Aluno findByName(String nome);
 
+    @Query("SELECT * FROM alunos WHERE cursoId LIKE :cId")
+    List<Aluno> findByCurso(int cId);
+
     @Query("UPDATE alunos SET nome_aluno=:nome, email=:email, telefone=:tel, cpf=:cpf, cursoId=:cId WHERE alunoId = :id")
     void update(String nome, String email, String tel, String cpf, int cId, int id);
 

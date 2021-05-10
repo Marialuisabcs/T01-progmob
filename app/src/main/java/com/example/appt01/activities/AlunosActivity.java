@@ -43,7 +43,7 @@ public class AlunosActivity extends AppCompatActivity {
         mostrarAlunos();
     }
 
-    public void mostrarAlunos(){//Teminar a implementação do list view dos alunos
+    public void mostrarAlunos(){
         Intent it = new Intent(this, InsrtAluActivity.class);
 
         alunos = db.alunoDao().getAll();

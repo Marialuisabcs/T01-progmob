@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,8 +48,6 @@ public class InsrtCrsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        //Toast toast = Toast.makeText(this, "CURSO_KEY: "+cursoKey, Toast.LENGTH_LONG);
-        //toast.show();
         if(cursoKey == -1){
             btExcluir.setVisibility(View.GONE);
         }
@@ -118,11 +117,17 @@ public class InsrtCrsActivity extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Curso curso = db.cursoDao().findById(cursoKey);
-                        db.cursoDao().delete(curso);
-                        db.close();
-                        Toast toast = Toast.makeText(InsrtCrsActivity.this, "Curso excluído com sucesso", Toast.LENGTH_SHORT);
-                        toast.show();
-                        finish();
+                        try {
+                            db.cursoDao().delete(curso);
+                            db.close();
+                            Toast toast = Toast.makeText(InsrtCrsActivity.this, "Curso excluído com sucesso", Toast.LENGTH_LONG);
+                            toast.show();
+                            finish();
+                        } catch (SQLiteConstraintException e){
+                            Toast toast = Toast.makeText(InsrtCrsActivity.this, "Curso não pode ser removido pois possuí alunos", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+
                     }
                 });
 
