@@ -19,4 +19,6 @@
     <string name="btExcluir">Excluir</string>
     <string name="txtCurso">Curso:</string>
     <string name="btSalvar">Salvar</string>
+    <string name="addAluno">Adicionar novo aluno</string>
+    <string name="addCurso">Adicionar novo curso</string>
 </resources>

@@ -8,15 +8,21 @@
 
     <ListView
         android:id="@+id/listViewAlunos"
-        android:layout_width="410dp"
-        android:layout_height="638dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="382dp"
+        android:layout_height="536dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="76dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="412dp"
         android:layout_height="91dp"
         android:layout_marginEnd="1dp"
@@ -36,7 +42,7 @@
             app:srcCompat="@drawable/ic_add"
             tools:ignore="VectorDrawableCompat"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="22dp" />
+            tools:layout_editor_absoluteY="22dp"/>
 
         <TextView
             android:id="@+id/txtAddAluno"
@@ -44,13 +50,12 @@
             android:layout_height="20dp"
             android:layout_marginTop="30dp"
             android:onClick="abrirInsrtAlu"
-            android:text="Adicionar Novo Aluno"
+            android:text="@string/addAluno"
             android:textColor="#0089b6"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="78dp"
-            tools:layout_editor_absoluteY="36dp" />
+            tools:layout_editor_absoluteY="36dp"/>
 
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

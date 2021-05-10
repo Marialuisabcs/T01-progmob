@@ -1,7 +1,9 @@
 package com.example.appt01.activities;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.appt01.R;
+import com.example.appt01.entities.Aluno;
 import com.example.appt01.entities.Curso;
 import com.example.appt01.utils.AppDatabase;
 
@@ -80,12 +83,14 @@ public class InsrtCrsActivity extends AppCompatActivity {
             if(cursoKey == -1) {
                 Curso novoCurso = new Curso(nome, qtdHrs);
                 db.cursoDao().insertAll(novoCurso);
+                db.close();
                 Toast toast = Toast.makeText(this, "Curso cadastrado com sucesso", Toast.LENGTH_SHORT);
                 toast.show();
             }
             else{
                 Curso novoCurso = new Curso(nome, qtdHrs);
-                db.cursoDao().update(novoCurso.getNome(), novoCurso.getQtdHrs(), cursoKey);
+                db.cursoDao().update(nome, qtdHrs, cursoKey);
+                db.close();
                 Toast toast = Toast.makeText(this, "Curso atualizado com sucesso", Toast.LENGTH_SHORT);
                 toast.show();
             }
@@ -96,10 +101,33 @@ public class InsrtCrsActivity extends AppCompatActivity {
 
 
     public void excluiCurso(View view) {
-        Curso curso = db.cursoDao().findById(cursoKey);
-        db.cursoDao().delete(curso);
-        Toast toast = Toast.makeText(this, "Curso excluído com sucesso", Toast.LENGTH_SHORT);
-        toast.show();
-        finish();
+        AlertDialog.Builder  confirm = new AlertDialog.Builder(this);
+        confirm.setTitle("Confirmar exclusão");
+        confirm.setMessage("Tem certeza que seja excluir este curso?");
+        confirm.setCancelable(true);
+        confirm.setNegativeButton(
+                "Não",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        confirm.setPositiveButton(
+                "Sim",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Curso curso = db.cursoDao().findById(cursoKey);
+                        db.cursoDao().delete(curso);
+                        db.close();
+                        Toast toast = Toast.makeText(InsrtCrsActivity.this, "Curso excluído com sucesso", Toast.LENGTH_SHORT);
+                        toast.show();
+                        finish();
+                    }
+                });
+
+        AlertDialog alert = confirm.create();
+        alert.show();
     }
+
 }

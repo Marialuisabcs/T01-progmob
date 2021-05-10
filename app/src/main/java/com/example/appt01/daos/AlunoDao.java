@@ -22,8 +22,8 @@ public interface AlunoDao   {
     @Query("SELECT * FROM alunos WHERE nome_aluno LIKE :nome")
     Aluno findByName(String nome);
 
-    @Query("UPDATE alunos SET nome_aluno=:nome, email=:email, telefone=:tel, cpf=:cpf WHERE alunoId = :id")
-    void update(String nome, String email, String tel, String cpf, int id);
+    @Query("UPDATE alunos SET nome_aluno=:nome, email=:email, telefone=:tel, cpf=:cpf, cursoId=:cId WHERE alunoId = :id")
+    void update(String nome, String email, String tel, String cpf, int cId, int id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(Aluno... aluno);

@@ -45,6 +45,7 @@ public class CursosActivity extends AppCompatActivity {
         Intent it = new Intent(this, InsrtCrsActivity.class);
 
         cursos = db.cursoDao().getAll();
+        db.close();
         adpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, cursos);
         lvCursos.setAdapter(adpt);
 

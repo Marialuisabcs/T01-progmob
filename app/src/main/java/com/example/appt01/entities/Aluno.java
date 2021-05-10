@@ -103,6 +103,6 @@ public class Aluno {
 
     @Override
     public String toString() {
-        return "Nome: " + name + "Curso: " + curso.getNome();
+        return "Nome: " + name;
     }
 }

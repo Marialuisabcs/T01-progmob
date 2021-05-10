@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -43,9 +44,10 @@ public class AlunosActivity extends AppCompatActivity {
     }
 
     public void mostrarAlunos(){//Teminar a implementação do list view dos alunos
-        Intent it = new Intent(this, InsrtCrsActivity.class);
+        Intent it = new Intent(this, InsrtAluActivity.class);
 
         alunos = db.alunoDao().getAll();
+        db.close();
         adpt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, alunos);
         lvAlunos.setAdapter(adpt);
 
